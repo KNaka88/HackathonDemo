@@ -10,7 +10,8 @@ def get_llm_model():
     """
     Returns a BedrockModel using environment variables for configuration
     """    
-    session = Session()    
+    session = Session()
+    print(session.region_name)
     return BedrockModel(
         model_id=os.environ.get("BEDROCK_MODEL_ID", "us.anthropic.claude-sonnet-4-20250514-v1:0"),
         boto_session=session,

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-from agents.csr_agent import create_agent_with_tools, dynamodb_client
+from agents.csr_agent import create_csr_agent
+from clients.dynamodb_client import dynamodb_client
 
 import logging
 
@@ -11,13 +12,17 @@ logging.basicConfig(
 
 if __name__ == "__main__":
     print("\n📁 Flight Assist Agent 📁\n")
-    print("Type 'exit' to quit.")
+    print("Type 'exit' to quit.\n")
+    print("Guten Tag! Welcome to German Airline Customer Support. I'm here to help you with your flight information and booking inquiries.\n")
+    print("To ensure I can provide you with accurate and secure access to your flight details, I'll need to verify your identity first. Please provide either:\n")
+    print("• Your Frequent Flyer Number, or")
+    print("• Your Booking ID/Reference Number\n")
+    print("Once I have this information, I'll be able to assist you with your flight status, check for any delays, and help with any questions you may have about your booking.\n")
 
-    # Interactive loop
     with dynamodb_client:
         # Get MCP tools and create agent
         mcp_tools = dynamodb_client.list_tools_sync()
-        agent = create_agent_with_tools(mcp_tools)
+        csr_agent = create_csr_agent(mcp_tools)
         
         while True:
             try:
@@ -26,7 +31,7 @@ if __name__ == "__main__":
                     print("\nGoodbye! 👋")
                     break
 
-                response = agent(
+                response = csr_agent(
                     user_input, 
                 )
                 
