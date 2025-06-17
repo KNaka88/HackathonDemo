@@ -8,7 +8,6 @@ This repository contains a multi-agent system built using the Strands Agents fra
 - `session.py`: Session management for the agents
 - `agents/`: Directory containing agent implementations
 - `requirements.txt`: Project dependencies
-- `.env`: Environment variables (not committed to version control)
 
 ## Prerequisites
 
@@ -56,24 +55,6 @@ Alternatively, you can install from pyproject.toml:
 
 ```bash
 uv pip install -e .
-```
-
-### 5. Set up environment variables
-
-Copy the example environment file and update it with your settings:
-
-```bash
-cp .env.example .env
-```
-
-Edit the `.env` file with your AWS credentials and other configuration.
-
-```
-AWS_REGION="us-west-2"
-AWS_PROFILE="default"
-AWS_ACCESS_KEY_ID="ACCESS_KEY"
-AWS_SECRET_ACCESS_KEY="SECRET_ACCESS_KEY"
-AWS_SESSION_TOKEN="SESSION_TOKEN"
 ```
 
 ## Running the Application
