@@ -1,7 +1,7 @@
 from strands import Agent
 from session import get_llm_model
 from strands_tools import file_read
-from .schema_helper import read_table_schema, validate_update_data
+from tools.schema_helper import read_table_schema, validate_update_data
 
 def create_csr_agent(tools):
     return Agent(
