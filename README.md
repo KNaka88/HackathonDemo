@@ -1,6 +1,4 @@
-# Multi-Agent Example
-
-This repository contains a multi-agent system built using the Strands Agents framework for customer service automation and schema management.
+# Flight Agent
 
 ## Project Structure
 
