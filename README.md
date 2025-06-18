@@ -128,6 +128,16 @@ The system includes comprehensive DynamoDB schemas for:
   - `schema_helper.py`: Schema management and validation helper
 - `clients/`: Client-specific configurations and data
 - `schemas/`: Schema definitions and validation rules
+- `security/`: Security module with comprehensive protection
+  - `__init__.py`: Security module initialization
+  - `guardrails_config.py`: Amazon Bedrock Guardrails configuration
+  - `security_monitor.py`: Security monitoring and threat detection
+  - `config.py`: Centralized security configuration
+  - `utils.py`: Security utility functions
+  - `test_security.py`: Comprehensive security tests
+  - `quick_security_test.py`: Quick security validation
+  - `run_tests.py`: Security test runner
+- `tools/`: Additional tools and utilities
 - `requirements.txt`: Project dependencies
 - `pyproject.toml`: Project configuration and dependencies
 - `.gitignore`: Git ignore rules
