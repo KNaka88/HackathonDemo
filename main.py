@@ -30,6 +30,8 @@ if __name__ == "__main__":
                 if user_input.lower() == "exit":
                     print("\nGoodbye! 👋")
                     break
+                if not user_input:
+                    continue
 
                 response = csr_agent(
                     user_input, 
