@@ -1,0 +1,67 @@
+{
+  "table_name": "Passengers",
+  "primary_key": {
+    "partition_key": "passenger_id",
+    "sort_key": null
+  },
+  "global_secondary_indexes": [
+    {
+      "index_name": "FrequentFlyerIndex",
+      "partition_key": "frequent_flyer_tier",
+      "sort_key": null,
+      "projection": "ALL"
+    }
+  ],
+  "attributes": {
+    "passenger_id": {
+      "type": "String",
+      "description": "Unique identifier for passenger",
+      "required": true
+    },
+    "first_name": {
+      "type": "String",
+      "description": "Passenger's first name",
+      "required": true
+    },
+    "last_name": {
+      "type": "String",
+      "description": "Passenger's last name",
+      "required": true
+    },
+    "email": {
+      "type": "String",
+      "description": "Passenger's email address",
+      "required": true
+    },
+    "phone": {
+      "type": "String",
+      "description": "Passenger's phone number",
+      "required": true
+    },
+    "frequent_flyer_number": {
+      "type": "String",
+      "description": "Frequent flyer program number",
+      "required": true
+    },
+    "frequent_flyer_tier": {
+      "type": "String",
+      "description": "Frequent flyer tier level (Basic, Frequent_Traveller, Senator)",
+      "required": true
+    },
+    "preferred_language": {
+      "type": "String",
+      "description": "Passenger's preferred language code",
+      "required": true
+    },
+    "mobile_app_enabled": {
+      "type": "Boolean",
+      "description": "Whether mobile app is enabled for passenger",
+      "required": true
+    },
+    "notification_preferences": {
+      "type": "StringSet",
+      "description": "Set of notification preferences (EMAIL, PUSH, SMS)",
+      "required": true
+    }
+  }
+}

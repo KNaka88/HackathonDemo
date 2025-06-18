@@ -1,0 +1,73 @@
+{
+  "table_name": "Rebooking_Requests",
+  "primary_key": {
+    "partition_key": "request_id",
+    "sort_key": null
+  },
+  "global_secondary_indexes": [
+    {
+      "index_name": "PassengerRequestIndex",
+      "partition_key": "passenger_id",
+      "sort_key": null,
+      "projection": "ALL"
+    },
+    {
+      "index_name": "BookingRequestIndex",
+      "partition_key": "original_booking_id",
+      "sort_key": null,
+      "projection": "ALL"
+    }
+  ],
+  "attributes": {
+    "request_id": {
+      "type": "String",
+      "description": "Unique identifier for rebooking request",
+      "required": true
+    },
+    "passenger_id": {
+      "type": "String",
+      "description": "Reference to passenger making the request",
+      "required": true
+    },
+    "original_booking_id": {
+      "type": "String",
+      "description": "Reference to original booking being changed",
+      "required": false
+    },
+    "request_type": {
+      "type": "String",
+      "description": "Type of request (REBOOKING, REFUND, CANCELLATION)",
+      "required": true
+    },
+    "request_timestamp": {
+      "type": "String",
+      "description": "When request was made in ISO 8601 format",
+      "required": true
+    },
+    "status": {
+      "type": "String",
+      "description": "Status of request (PENDING, IN_PROGRESS, COMPLETED, DECLINED)",
+      "required": true
+    },
+    "priority": {
+      "type": "String",
+      "description": "Priority level (LOW, MEDIUM, HIGH)",
+      "required": true
+    },
+    "reason": {
+      "type": "String",
+      "description": "Reason for rebooking request",
+      "required": true
+    },
+    "preferred_options": {
+      "type": "StringSet",
+      "description": "Set of preferred options (NEXT_AVAILABLE, SAME_CLASS, UPGRADE, etc.)",
+      "required": false
+    },
+    "ai_interaction": {
+      "type": "Boolean",
+      "description": "Whether request was handled by AI",
+      "required": true
+    }
+  }
+}

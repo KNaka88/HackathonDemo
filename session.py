@@ -1,10 +1,6 @@
 import os
 from boto3 import Session
 from strands.models import BedrockModel
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 def get_llm_model():
     """

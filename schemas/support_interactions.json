@@ -1,0 +1,77 @@
+{
+  "table_name": "Support_Interactions",
+  "primary_key": {
+    "partition_key": "interaction_id",
+    "sort_key": null
+  },
+  "global_secondary_indexes": [
+    {
+      "index_name": "PassengerInteractionIndex",
+      "partition_key": "passenger_id",
+      "sort_key": "interaction_timestamp",
+      "projection": "ALL"
+    }
+  ],
+  "attributes": {
+    "interaction_id": {
+      "type": "String",
+      "description": "Unique identifier for support interaction",
+      "required": true
+    },
+    "passenger_id": {
+      "type": "String",
+      "description": "Reference to passenger who contacted support",
+      "required": true
+    },
+    "booking_id": {
+      "type": "String",
+      "description": "The booking id of the case",
+      "required": true
+    },
+    "interaction_timestamp": {
+      "type": "String",
+      "description": "When interaction occurred in ISO 8601 format - Insert Current Time",
+      "required": true
+    },
+    "interaction_type": {
+      "type": "String",
+      "description": "Type of interaction (AI_CHAT, PHONE_CALL, EMAIL, etc.)",
+      "required": true
+    },
+    "channel": {
+      "type": "String",
+      "description": "Communication channel (MOBILE_APP, WEB, CALL_CENTER, EMAIL)",
+      "required": false
+    },
+    "agent_type": {
+      "type": "String",
+      "description": "Type of agent (AI, HUMAN)",
+      "required": true
+    },
+    "context": {
+      "type": "String",
+      "description": "Context or summary of the interaction",
+      "required": true
+    },
+    "resolution_status": {
+      "type": "String",
+      "description": "Status of resolution (RESOLVED, PENDING, ESCALATED_TO_HUMAN)",
+      "required": true
+    },
+    "duration_seconds": {
+      "type": "Number",
+      "description": "Duration of interaction in seconds",
+      "required": false
+    },
+    "satisfaction_score": {
+      "type": "Number",
+      "description": "Customer satisfaction score (1-5)",
+      "required": false
+    },
+    "transferred_to_human": {
+      "type": "Boolean",
+      "description": "Whether interaction was transferred to human agent",
+      "required": true
+    }
+  }
+}

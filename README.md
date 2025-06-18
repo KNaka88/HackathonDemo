@@ -1,13 +1,19 @@
 # Multi-Agent Example
 
-This repository contains a multi-agent system built using the Strands Agents framework.
+This repository contains a multi-agent system built using the Strands Agents framework for customer service automation and schema management.
 
 ## Project Structure
 
 - `main.py`: Main entry point for the application
 - `session.py`: Session management for the agents
 - `agents/`: Directory containing agent implementations
+  - `csr_agent.py`: Customer Service Representative agent
+  - `schema_helper.py`: Schema management and validation helper
+- `clients/`: Client-specific configurations and data
+- `schemas/`: Schema definitions and validation rules
 - `requirements.txt`: Project dependencies
+- `pyproject.toml`: Project configuration and dependencies
+- `.gitignore`: Git ignore rules
 
 ## Prerequisites
 

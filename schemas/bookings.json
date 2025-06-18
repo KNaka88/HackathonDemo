@@ -1,0 +1,73 @@
+{
+  "table_name": "Bookings",
+  "primary_key": {
+    "partition_key": "booking_id",
+    "sort_key": null
+  },
+  "global_secondary_indexes": [
+    {
+      "index_name": "FlightIndex",
+      "partition_key": "flight_id",
+      "sort_key": null,
+      "projection": "ALL"
+    },
+    {
+      "index_name": "PassengerIndex",
+      "partition_key": "passenger_id",
+      "sort_key": null,
+      "projection": "ALL"
+    }
+  ],
+  "attributes": {
+    "booking_id": {
+      "type": "String",
+      "description": "Unique identifier for booking",
+      "required": true
+    },
+    "passenger_id": {
+      "type": "String",
+      "description": "Reference to passenger who made the booking",
+      "required": true
+    },
+    "flight_id": {
+      "type": "String",
+      "description": "Reference to the booked flight",
+      "required": true
+    },
+    "booking_reference": {
+      "type": "String",
+      "description": "Booking reference code",
+      "required": true
+    },
+    "booking_date": {
+      "type": "String",
+      "description": "Date and time when booking was made in ISO 8601 format",
+      "required": true
+    },
+    "class": {
+      "type": "String",
+      "description": "Travel class (Economy, Premium_Economy, Business, First)",
+      "required": true
+    },
+    "seat_number": {
+      "type": "String",
+      "description": "Assigned seat number",
+      "required": true
+    },
+    "price": {
+      "type": "Number",
+      "description": "Booking price",
+      "required": true
+    },
+    "currency": {
+      "type": "String",
+      "description": "Currency code (EUR, USD, GBP, JPY)",
+      "required": true
+    },
+    "booking_status": {
+      "type": "String",
+      "description": "Status of booking (CONFIRMED, CANCELLED, PENDING)",
+      "required": true
+    }
+  }
+}

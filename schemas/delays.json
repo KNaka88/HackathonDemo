@@ -1,0 +1,62 @@
+{
+  "table_name": "Delays",
+  "primary_key": {
+    "partition_key": "delay_id",
+    "sort_key": null
+  },
+  "global_secondary_indexes": [
+    {
+      "index_name": "FlightDelayIndex",
+      "partition_key": "flight_id",
+      "sort_key": null,
+      "projection": "ALL"
+    }
+  ],
+  "attributes": {
+    "delay_id": {
+      "type": "String",
+      "description": "Unique identifier for delay record",
+      "required": true
+    },
+    "flight_id": {
+      "type": "String",
+      "description": "Reference to the delayed flight",
+      "required": true
+    },
+    "delay_reason": {
+      "type": "String",
+      "description": "Reason for delay (WEATHER, TECHNICAL, OPERATIONAL)",
+      "required": true
+    },
+    "delay_start_time": {
+      "type": "String",
+      "description": "When delay started in ISO 8601 format",
+      "required": true
+    },
+    "delay_end_time": {
+      "type": "String",
+      "description": "When delay ended in ISO 8601 format",
+      "required": true
+    },
+    "delay_duration_minutes": {
+      "type": "Number",
+      "description": "Duration of delay in minutes",
+      "required": true
+    },
+    "weather_condition": {
+      "type": "String",
+      "description": "Weather condition during delay",
+      "required": false
+    },
+    "impact_level": {
+      "type": "String",
+      "description": "Impact level of delay (LOW, MEDIUM, HIGH)",
+      "required": true
+    },
+    "notification_sent": {
+      "type": "Boolean",
+      "description": "Whether passengers were notified of delay",
+      "required": true
+    }
+  }
+}
