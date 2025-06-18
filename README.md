@@ -19,6 +19,33 @@ The system follows a layered architecture with clear separation of concerns:
 └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
 ```
 
+### Strands gives Claude:
+- Complete tool definitions and schemas
+- System prompt with detailed instructions
+- Authority to decide WHEN and WHICH tools to call
+
+### Claude Sonnet 4 (via Bedrock) is responsible for:
+- Analyzing user queries
+- Deciding which tools to use
+- Determining tool call parameters
+- Calling tools directly
+- Processing tool results
+- Generating responses
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Strands       │───▶│   Claude/Bedrock │───▶│      MCP        │
+│                 │    │                  │    │                 │
+│ • Registers     │    │ • Analyzes query │    │ • Executes      │
+│   tools         │    │ • Decides which  │    │   database      │
+│ • Provides      │    │   tools to call  │    │   operations    │
+│   schemas       │    │ • Calls tools    │    │ • Returns data  │
+│ • Orchestrates  │    │   directly       │    │                 │
+│   conversation  │    │ • Processes      │    │                 │
+│                 │    │   results        │    │                 │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+```
+
 ### Technology Stack
 
 - **UI Layer**: Console interface for user interaction
