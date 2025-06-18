@@ -32,3 +32,27 @@ build/
 # OS specific
 .DS_Store
 state.json
+
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/tfplan
+terraform/tfplan.*
+
+# Terraform crash log files
+terraform/crash.log
+terraform/crash.*.log
+
+# Terraform override files
+terraform/override.tf
+terraform/override.tf.json
+terraform/*_override.tf
+terraform/*_override.tf.json
+
+# Terraform CLI configuration files
+terraform/.terraformrc
+terraform/terraform.rc
